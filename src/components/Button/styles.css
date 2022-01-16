@@ -3,4 +3,10 @@
     padding: 20px;
     background: cornflowerblue;
     border: none;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background: gray;
+    cursor: not-allowed;
 }
