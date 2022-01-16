@@ -11,14 +11,12 @@ export const Home = () => {
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
   const [page, setPage] = useState(0);
-  const [postsPerPage] = useState(50);
+  const [postsPerPage] = useState(2);
   const [searchValue, setSearchValue] = useState('');
 
   const noMorePosts = page + postsPerPage >= allPosts.length;
   const filteredPosts = searchValue
-    ? allPosts.filter((post) => {
-        return post.title.toLowerCase().includes(searchValue.toLowerCase());
-      })
+    ? allPosts.filter((post) => post.title.toLowerCase().includes(searchValue.toLowerCase()))
     : posts;
 
   const handleLoadPosts = useCallback(async (page, postsPerPage) => {
